@@ -1,5 +1,5 @@
 -name : print message
-hosts : all
+  hosts : all
 tasks:
   -name : print messahe hello
   debug:
