@@ -1,6 +1,6 @@
 ---
 - name: setup project
-  hosts: new
+  hosts: hello
   tasks:
     - name: update it
       ansible.builtin.apt:
