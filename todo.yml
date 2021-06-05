@@ -4,6 +4,7 @@
   become: yes
   tasks:
     - name: update it
-      ansible.builtin.apt:
+      apt:
         name: ngnix
         update_catche: yes
+         state: present
