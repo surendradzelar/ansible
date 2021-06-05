@@ -1,0 +1,8 @@
+---
+- name: setup project
+  hosts: all
+  tasks:
+    - name: update it
+      ansible.builtin.apt:
+        name: ngnix
+        update_catche: yes
