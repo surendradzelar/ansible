@@ -1,6 +1,6 @@
 ---
 - name: setup project
-  hosts: hello
+  hosts: all
   become: yes
   tasks:
     - name: update it
