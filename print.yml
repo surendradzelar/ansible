@@ -1,0 +1,6 @@
+-name : print message
+hosts : all
+tasks:
+  -name : print messahe hello
+    debug :
+      msg : hello world
