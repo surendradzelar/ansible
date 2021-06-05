@@ -4,4 +4,4 @@
   tasks:
     - name: play.example.com
       ansible.builtin.debug:
-        msg: URL = {{ URL}}
+        msg: URL = {{ http://google.com }}
