@@ -1,9 +1,6 @@
 ---
-- name: print mess
+- name: My task
   hosts: all
-
-
   tasks:
-  -name : print messahe hello
-  debug:
-      msg : hello world
+     - name: Leaving a mark
+       msg: "touch /tmp/ansible_was_here"
