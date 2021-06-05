@@ -1,11 +1,9 @@
 ---
-- hosts: all
+- name: setup project
+  hosts: all
+  become: yes
   tasks:
-    - name: ensure nginx 
-      ansible.builtin.apt: 
-      name: nginx 
-      state: present
-    - name: start nginx
-      service:
-          name: nginx
-          state: started
+    - name: update it
+      apt:
+        name: ngnix
+        update_catche: yes
