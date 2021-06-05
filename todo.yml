@@ -1,10 +1,10 @@
 ---
-- name: setup project
-  hosts: all
-  become: yes
+- hosts: all
   tasks:
-    - name: update it
-      apt:
-        name: ngnix
-        update_catche: yes
-         state: present
+    - name: ensure nginx 
+      apt: 
+      name=nginx 
+    - name: start nginx
+      service:
+          name: nginx
+          state: started
