@@ -1,6 +1,8 @@
 ---
-- name: print message
+- name: print mess
   hosts: all
+
+
   tasks:
   -name : print messahe hello
   debug:
