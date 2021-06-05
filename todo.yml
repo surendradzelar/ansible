@@ -3,7 +3,8 @@
   tasks:
     - name: ensure nginx 
       apt: 
-      name=nginx 
+      name: nginx 
+      state: present
     - name: start nginx
       service:
           name: nginx
