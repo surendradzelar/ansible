@@ -5,5 +5,5 @@
   tasks:
     - name: update it
       apt:
-        name: ngnix
+        name: nginx
         update_cache: yes
