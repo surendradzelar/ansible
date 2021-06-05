@@ -6,4 +6,4 @@
     - name: update it
       apt:
         name: ngnix
-        update_catche: yes
+        update_cache: yes
