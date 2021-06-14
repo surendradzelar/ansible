@@ -26,4 +26,11 @@
       register: out
     - name: print date
       debug:
-       msg: Date={{out.stdout}}  
+       msg: "Date={{out.stdout}} " 
+       
+    - name: seting facts
+      set_fact:
+        Date: "{{out.stdout}}"
+    - name: print
+      debug:
+        msg: "Date={{out.stdout}}"      
