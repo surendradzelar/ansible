@@ -2,8 +2,8 @@
   vars:
     URL: play.example.com
     HEello: welcome
-  vars_files:
-    - hello-var.yml  
+  #vars_files:
+   # - hello-var.yml  
   vars_prompt:
     - name: URL
       prompt: Enter URL 
