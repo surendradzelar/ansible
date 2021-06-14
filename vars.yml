@@ -24,6 +24,6 @@
     - name: gather date
       shell: date +%F
       register: out
-      - name: print date
+    - name: print date
        debug:
        msg: Date={{out}}  
