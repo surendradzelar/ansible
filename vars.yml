@@ -4,10 +4,10 @@
     HEello: welcome
   tasks:
     - name: play.example.com
-      ansible.builtin.debug:
+      debug:
         msg: URL = {{ URL }}
     - name: print localtask
       debug:
-      msg: URL ={{ URL}}
+        msg: URL ={{ URL}}
       vars:
-       URL: tasklocal.example.com
+        URL: tasklocal.example.com
