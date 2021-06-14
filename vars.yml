@@ -2,6 +2,8 @@
   vars:
     URL: play.example.com
     HEello: welcome
+  vars_files:
+    - sample.yml  
   tasks:
     - name: play.example.com
       debug:
