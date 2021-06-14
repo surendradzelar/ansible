@@ -25,5 +25,5 @@
       shell: date +%F
       register: out
     - name: print date
-       debug:
+      debug:
        msg: Date={{out}}  
