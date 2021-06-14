@@ -6,3 +6,8 @@
     - name: play.example.com
       ansible.builtin.debug:
         msg: URL = {{ URL }}
+    - name: print localtask
+        debug:
+        msg: URL ={{ URL}}
+    vars:
+      URL: tasklocal.example.com
