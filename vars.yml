@@ -1,5 +1,4 @@
-- name: printing var
-  hosts: all
+- hosts: all
   vars:
     URL: play.example.com
   tasks:
