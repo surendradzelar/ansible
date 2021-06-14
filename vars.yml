@@ -18,8 +18,8 @@
       vars:
         URL: tasklocal.example.com
 
-- name: demo on dynamical
-  hosts: all
+#- name: demo on dynamical
+- hosts: all
   tasks:
     - name: gather date
       shell: date +%F
