@@ -1,6 +1,5 @@
 ---
-- name: print mess
-  hosts: all
+- hosts: all
   tasks:
      - name: print mess
        ansible.builtin.debug:
