@@ -1,6 +1,9 @@
 ---
 - name: printing var
   hosts: all
+  var:
+    URL: play.example.com
+    project: example
   tasks:
     - name: play.example.com
       ansible.builtin.debug:
