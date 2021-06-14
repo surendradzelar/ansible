@@ -8,6 +8,6 @@
         msg: URL = {{ URL }}
     - name: print localtask
       debug:
-        msg: URL ={{ URL}}
-    vars:
-      URL: tasklocal.example.com
+      msg: URL ={{ URL}}
+      vars:
+       URL: tasklocal.example.com
