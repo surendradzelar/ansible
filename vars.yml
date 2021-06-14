@@ -4,10 +4,10 @@
     HEello: welcome
   #vars_files:
    # - hello-var.yml  
-  vars_prompt:
-    - name: URL
-      prompt: Enter URL 
-      private: no
+  #vars_prompt:
+   # - name: URL
+     # prompt: Enter URL 
+     # private: no
   tasks:
     - name: play.example.com
       debug:
