@@ -33,4 +33,11 @@
         Date: "{{out.stdout}}"
     - name: print
       debug:
-        msg: "Date={{out.stdout}}"      
+        msg: "Date={{out.stdout}}"    
+
+- name: print facts
+  hosts: all
+  tasks:
+    - name: ptint facts
+      debug:
+        msg : hostname = {{ansible-hostname}}          
