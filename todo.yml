@@ -1,9 +1,0 @@
----
-- name: setup project
-  hosts: all
-  become: yes
-  tasks:
-    - name: update it
-      apt:
-        name: nginx
-        update_cache: yes

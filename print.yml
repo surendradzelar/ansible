@@ -1,7 +1,0 @@
----
-- name: print mess
-  hosts: all
-  tasks:
-     - name: print mess
-       ansible.builtin.debug:
-          msg: "touch /tmp/ansible_was_here"
