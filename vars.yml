@@ -40,4 +40,4 @@
   tasks:
     - name: ptint facts
       debug:
-        msg : hostname = {{ansible-hostname}}          
+        msg : hostname = {{ansible_hostname}}          
