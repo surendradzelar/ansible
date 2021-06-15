@@ -65,7 +65,7 @@
         replace: todo/frontend/dist;
 
  - name: Move Default to other dir
-   command: mv  default  /etc/nginx/sites-available/default    
+   command: mv default /etc/nginx/sites-available/default    
 
  
 
