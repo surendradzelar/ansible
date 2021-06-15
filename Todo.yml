@@ -32,7 +32,13 @@
         state: directory
 
     - name: changing directory
-      command: chdir=todo ls   
+      command: chdir=todo ls 
+
+    - name: unzip the Downloand content
+      unarchive:
+        src: /tmp/frontend.zip
+        dest: /var/www/html
+        remote_src: yes    
 
 
 
