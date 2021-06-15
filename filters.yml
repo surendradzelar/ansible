@@ -28,4 +28,22 @@
 
     - name: print tag data
       debug:
-        msg: "{{tag_data | dict2items}}"      
+        msg: "{{tag_data | dict2items}}"   
+
+
+    - name: create servers
+      debug:
+        msg: "{{item.name}}"
+      loop:
+        - name: server1
+          disks: 1gb
+          ram: 5gb
+          network: 
+              nicol: 8gb
+              nicol: 3gb
+        - name: second server
+          disks: 5gb
+          ram: 8gb   
+           network: 
+              nicol: 8gb
+              nicol: 3gb          
