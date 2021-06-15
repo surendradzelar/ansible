@@ -1,4 +1,4 @@
-- name: craeting filter
+- name: creating filter
   hosts: all
   vars:
     URL: https://sonatype-download.global.ssl.fastly.net/repository/downloads-prod-group/3/nexus-3.30.1-01-unix.tar.gz
