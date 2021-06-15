@@ -32,7 +32,7 @@
         state: directory
 
     - name: changing directory
-      command: chdir= cd /todo/   
+      command: chdir=/todo/   
 
 
 
