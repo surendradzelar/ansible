@@ -3,7 +3,7 @@
 #- name: printing variables
  - hosts: all
 
-    vars_file:
+    var_file:
         - example-var.yml
 
   vars_prompt:
