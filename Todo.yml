@@ -22,9 +22,10 @@
          dest: /tmp/frontend.zip
          username: admin
          password: zelar123
+
     - name: create the HtDocs directory
       file:
-        path: /var/www/html
+        path: /var/www/html/todo/frontend
         state: directory
 
     - name: changing location
@@ -42,20 +43,8 @@
       unarchive:
         src: /tmp/frontend.zip
         dest: /var/www/html
-        remote_src: yes    
-
-        #- name: Git checkout
-  #ansible.builtin.git:
-   # repo: 'https://foosball.example.org/path/to/repo.git'
-    #dest: /srv/checkout
-    #version: release-0.22
-
-
-    - name: Enable service 
-      systemd:
-          name: nginx
-          enabled: yes
-          state: enable
+        remote_src: yes  
+          
 
     - name: Start Nginx
       systemd:
