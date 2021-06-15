@@ -23,11 +23,10 @@
          username: admin
          password: zelar123
 
-    - name: This command will change the working directory to somedir/ and will only run when /var/www/html doesn't exist.
+    - name: change the working directory to  /var/www/html 
       command: /var/www/html
-      args:
-        chdir: /var/www/html/
-        creates: /path/to/var/www/html  
+        chdir: /var/www/html
+ 
 
 
 
