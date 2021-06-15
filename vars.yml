@@ -11,7 +11,7 @@
     URL: task.example.com
     project: example
   tasks:
-    - name: task.example.com
+    - name: play.example.com
       ansible.builtin.debug:
         msg: URL = {{ URL }}
     - name: print local
