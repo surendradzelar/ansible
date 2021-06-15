@@ -4,7 +4,7 @@
  - hosts: all
 
     vars_file:
-      - example-var.yml
+        - example-var.yml
 
   vars_prompt:
     - name: URL
