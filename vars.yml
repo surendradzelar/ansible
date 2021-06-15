@@ -2,34 +2,44 @@
 
 - name: printing variables
   hosts: all
+
   vars_file:
     - example-var.yml
+
   vars_prompt:
     - name: URL
       prompt: Enter URL
       private: no
+
   vars:
     URL: task.example.com
     project: example
+
   tasks:
     - name: play.example.com
       ansible.builtin.debug:
         msg: URL = {{ URL }}
+
     - name: print local
       debug:
       msg: URL={{URL}}
+      
     - name : gather date
       shell: date +%F
       register: out
+
     - name: print date
       debug:
         msg: "Date={{out.stdout}}"
+
     - name: seting facts
       set_facts:
         DAte: "{{out.stdout}}"
+
     - name: print date
       debug:
         msg: Date={{DAte}}
+        
     - name: print facts
       debug:
           msg: hostname={{ansible_hostname}}                
