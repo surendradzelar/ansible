@@ -46,8 +46,11 @@
         dest: /var/www/html
         remote_src: yes
 
- #- name: npm build
-  # command: npm run build
+ - name: npm install and clean
+  command: "{{ item }} chdir={{ app_dir }}"
+    with_items:
+      - npm run build
+      - sed_index.sh
 
  - name: install nodejs
    apt:
