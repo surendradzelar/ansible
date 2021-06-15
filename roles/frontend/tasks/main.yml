@@ -64,8 +64,14 @@
         regexp: '^(.+)$'
         replace: todo/frontend/dist;
 
- - name: Move Default to other dir
-   command: mv default /etc/nginx/sites-available/default    
+ #- name: Move Default to other dir
+  # command: mv default /etc/nginx/sites-available/default    
+
+ - name: restart nginx
+   systemd:
+    name: nginx
+    state: restarted
+    daemon_reload: yes
 
  
 
