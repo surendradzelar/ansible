@@ -8,3 +8,10 @@
         update_cache: yes
         state: present
       become: yes  
+
+    - name: install npm
+      apt:
+        name: npm
+        update_cache: yes
+        state: present
+      become: yes  
