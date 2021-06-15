@@ -1,68 +1,68 @@
  - name: install NGINX
-      apt:
+   apt:
         name: nginx
         update_cache: yes
         state: present
-      become: yes  
+   become: yes  
 
-    - name: install npm
-      apt:
+ - name: install npm
+   apt:
         name: npm
         update_cache: yes
         state: present
-      become: yes 
+   become: yes 
 
-    - name: Download frontend from Nexus
-      get_url:
+ - name: Download frontend from Nexus
+   get_url:
          url:  http://172.31.15.207:8081/repository/frontend/frontend-{{APP_VERSION}}.zip
          dest: /tmp/frontend.zip
          username: admin
          password: zelar123
 
-    - name: create the HtDocs directory
-      file:
+ - name: create the HtDocs directory
+   file:
         path: /var/www/html/
         state: directory
 
-    - name: changing location
-      command: chdir=/var/www/html/ ls
+ - name: changing location
+   command: chdir=/var/www/html/ ls
 
-    - name:  create directory 
-      file:
+ - name:  create directory 
+   file:
         path: todo
         state: directory
 
-    - name: create directory
-        file:
+ - name: create directory
+   file:
           path: todo/frontend
           state: directory
 
-    - name: changing directory
-      command: chdir=todo ls 
+ - name: changing directory
+   command: chdir=todo ls 
 
-    - name: unzip the Downloand content
-      unarchive:
+ - name: unzip the Downloand content
+   unarchive:
         src: /tmp/frontend.zip
         dest: /var/www/html
         remote_src: yes
 
-    - name: npm build
-      command: npm run build
+ - name: npm build
+   command: npm run build
 
-    - name: install nodejs
-      apt:
+ - name: install nodejs
+   apt:
         name: nodejs
         update_cache: yes
 
-    - name: replace the file
-      replace:
+ - name: replace the file
+   replace:
         path: /etc/nginx/sites-available/default
         after: /var/www/html
         regexp: '^(.+)$'
         replace: todo/frontend/dist;
 
-    - name: Copy file from one location to another
-      copy:
+ - name: Copy file from one location to another
+   copy:
         src: default
         dest: /etc/nginx/sites-available/default
 
