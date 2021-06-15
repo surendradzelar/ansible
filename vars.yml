@@ -1,7 +1,7 @@
 ---
 
 #- name: printing variables
-  hosts: all
+ - hosts: all
 
   vars_file:
     - example-var.yml
