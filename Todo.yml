@@ -27,7 +27,7 @@
      # command:  cd /var/www/html
     - name: change the working directory to  /var/www/html
       shell: cd /var/www/html
-        register: directory
+        register: /var/www/html
       become: yes
       debug:
         msg: "{{ /var/www/html }}"     
