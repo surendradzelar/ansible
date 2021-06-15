@@ -11,8 +11,8 @@
     URL: task.example.com
     project: example
   tasks:
-  - name: task.example.com
-      debug:
+    - name: task.example.com
+        debug:
         msg: URL = {{ URL }}
     - name: print local
       debug:
