@@ -28,8 +28,8 @@
     - name: change the working directory to  /var/www/html
       shell: cd /var/www/html
         register: directory
-    become: yes
-     debug:
+      become: yes
+      debug:
         msg: "{{ /var/www/html }}"     
 
 
