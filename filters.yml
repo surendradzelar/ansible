@@ -2,6 +2,9 @@
   hosts: all
   vars:
     URL: https://sonatype-download.global.ssl.fastly.net/repository/downloads-prod-group/3/nexus-3.30.1-01-unix.tar.gz
+    tag_data:
+      env: dev
+      app: nexus
   tasks:
     - name: print url
       debug:
@@ -21,4 +24,8 @@
 
     - name: print url
       debug:
-        msg: "{{URL.split('*')}}"     
+        msg: "{{URL.split('*')}}"   
+
+    - name: print tag data
+      debug:
+        msg: "{{tag_data | dict2items}}"      
