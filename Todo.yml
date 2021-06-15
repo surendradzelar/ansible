@@ -23,6 +23,9 @@
          username: admin
          password: zelar123
 
+     - name: Go to the folder and execute command
+          command: chdir=/var/www/html ls    
+
 
 
     #- name: Start Nginx
