@@ -1,6 +1,6 @@
 ---
 
-- name: printing variables
+#- name: printing variables
   hosts: all
 
   vars_file:
@@ -39,7 +39,7 @@
     - name: print date
       debug:
         msg: Date={{DAte}}
-        
+
     - name: print facts
       debug:
           msg: hostname={{ansible_hostname}}                
