@@ -29,9 +29,10 @@
     - name:  create directory 
       file:
         path: todo
-        state: directory   
-    - name: changing to todo directory
-      command: chdir= /todo      
+        state: directory  
+
+    - name: changing directory
+      command: chdir= /todo/     
 
 
 
