@@ -26,7 +26,7 @@
     #- name: change the working directory to  /var/www/html 
      # command:  cd /var/www/html
     - name: change the working directory to  /var/www/html
-      shell: cd /var/www/html
+      shell:  /var/www/html
         register: /var/www/html
       become: yes
       debug:
