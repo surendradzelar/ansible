@@ -2,7 +2,7 @@
   hosts: all
   become: yes
   tasks:
-    - name: update package
+    - name: install NGINX
       apt:
         name: nginx
         update_cache: yes
