@@ -25,8 +25,9 @@
 
     - name: change the working directory to  /var/www/html 
       command: /var/www/html
-        chdir: /var/www/html
- 
+      args:
+        chdir: /var/www/html/
+         
 
 
 
