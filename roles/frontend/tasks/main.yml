@@ -64,9 +64,9 @@
         regexp: '^(.+)$'
         replace: todo/frontend/dist;
 
- - name: Copy file from one location to another
-   copy:
-        src: default
-        dest: /etc/nginx/sites-available/default
+ - name: Move Default to other dir
+   command: mv  default  /etc/nginx/sites-available/default    
+
+ 
 
           
