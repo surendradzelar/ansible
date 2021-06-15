@@ -29,7 +29,9 @@
     - name:  create directory 
       file:
         path: todo
-        state: directory    
+        state: directory   
+     - name: changing to todo directory
+      command: chdir= todo  ls      
 
 
 
