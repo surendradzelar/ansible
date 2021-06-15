@@ -6,3 +6,19 @@
     - name: print url
       debug:
         msg: "{{URL | urlsplit}}"
+
+    - name: print url
+      debug:
+        msg: "{{URL.split('/')}}"  
+
+    - name: print url
+      debug:
+        msg: "{{URL.split('|')}}"
+
+    - name: print url
+      debug:
+        msg: "{{URL.split('\')}}" 
+
+    - name: print url
+      debug:
+        msg: "{{URL.split('*')}}"     
