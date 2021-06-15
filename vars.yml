@@ -26,9 +26,9 @@
     - name: seting facts
       set_facts:
         DAte: "{{out.stdout}}"
-    - name: print
-        debug:
-          msg: Date={{DAte}}
+    - name: print 
+    debug:
+    msg: Date={{DAte}}
     - name: print facts
         debug:
           msg: hostname={{ansible_hostname}}                
