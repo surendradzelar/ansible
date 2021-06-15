@@ -24,7 +24,7 @@
          password: zelar123
 
     - name: change the working directory to  /var/www/html 
-      command: /var/www/html
+      command: 
       args:
         chdir: /var/www/html/
          
