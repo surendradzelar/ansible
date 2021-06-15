@@ -50,7 +50,7 @@
    command: "{{ item }} chdir=/var/www/html/todo/frontend"
    with_items:
       - npm run build
-      - sed_index.sh
+
 
  - name: install nodejs
    apt:
