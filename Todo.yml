@@ -30,8 +30,8 @@
       file:
         path: todo
         state: directory
-          
-        name: changing directory
+
+    - name: changing directory
         command: chdir= /todo/     
 
 
