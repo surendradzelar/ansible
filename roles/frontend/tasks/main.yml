@@ -21,16 +21,21 @@
 
     - name: create the HtDocs directory
       file:
-        path: /var/www/html/todo/frontend
+        path: /var/www/html/
         state: directory
 
     - name: changing location
-      command: chdir=/var/www/html ls  
+      command: chdir=/var/www/html/ ls
 
     - name:  create directory 
       file:
         path: todo
         state: directory
+
+    - name: create directory
+        file:
+          path: todo/frontend
+          state: directory
 
     - name: changing directory
       command: chdir=todo ls 
@@ -39,11 +44,26 @@
       unarchive:
         src: /tmp/frontend.zip
         dest: /var/www/html
-        remote_src: yes  
-          
+        remote_src: yes
 
-    - name: Start Nginx
-      systemd:
-        state: started
-        name: nginx
-        enable: yes  
+    - name: npm build
+      command: npm run build
+
+    - name: install nodejs
+      apt:
+        name: nodejs
+        update_cache: yes
+
+    - name: replace the file
+      replace:
+        path: /etc/nginx/sites-available/default
+        after: /var/www/html
+        regexp: '^(.+)$'
+        replace: todo/frontend/dist;
+
+    - name: Copy file from one location to another
+      copy:
+        src: default
+        dest: /etc/nginx/sites-available/default
+
+          
