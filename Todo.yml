@@ -31,7 +31,7 @@
         path: todo
         state: directory   
     - name: changing to todo directory
-      command: chdir= todo      
+      command: chdir= /todo      
 
 
 
