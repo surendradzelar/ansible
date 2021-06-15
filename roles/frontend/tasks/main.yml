@@ -47,7 +47,7 @@
         remote_src: yes
 
  - name: npm install and clean
-   command: "{{ item }} chdir={{ /var/www/html/todo/frontend }}"
+   command: "{{ item }} chdir=/var/www/html/todo/frontend"
    with_items:
       - npm run build
       - sed_index.sh
