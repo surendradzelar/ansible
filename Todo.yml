@@ -1,5 +1,8 @@
- - hosts: all
+ - name: setup todo
+   hosts: all
    become: yes
+   Roles:
+    - frontend
 
      
  
