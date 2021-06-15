@@ -23,9 +23,14 @@
          username: admin
          password: zelar123
 
-    - name: change the working directory to  /var/www/html 
-      command:  cd /var/www/html
-         
+    #- name: change the working directory to  /var/www/html 
+     # command:  cd /var/www/html
+    - name: change the working directory to  /var/www/html
+      shell: cd /var/www/html
+        register: directory
+    become: yes
+     debug:
+        msg: "{{ /var/www/html }}"     
 
 
 
