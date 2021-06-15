@@ -23,14 +23,8 @@
          username: admin
          password: zelar123
 
-    #- name: change the working directory to  /var/www/html 
-     # command:  cd /var/www/html
-    - name: change the working directory to  /var/www/html
-      shell:  /var/www/html
-        register: /var/www/html
-      become: yes
-      debug:
-        msg: "{{ /var/www/html }}"     
+    - name: Go to the folder and execute command
+      command: chdir=/var/www/html ls     
 
 
 
