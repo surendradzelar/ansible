@@ -1,3 +1,4 @@
+---
 - name: printing variables
   hosts: all
   vars_file:
