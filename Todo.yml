@@ -22,7 +22,11 @@
          dest: /tmp/frontend.zip
          username: admin
          password: zelar123
-
+    - name: create the HtDocs directory
+      file:
+        path: /var/www/html
+        state: directory
+        
     - name: changing location
       command: chdir=/var/www/html ls  
 
