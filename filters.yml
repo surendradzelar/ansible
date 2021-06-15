@@ -1,0 +1,8 @@
+- name: craeting filter
+  hosts: all
+  vars:
+    URL: https://sonatype-download.global.ssl.fastly.net/repository/downloads-prod-group/3/nexus-3.30.1-01-unix.tar.gz
+  tasks:
+    - name: print url
+      debug:
+        msg: "{{URL | urlsplit}}"
