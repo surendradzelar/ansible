@@ -1,6 +1,6 @@
  - hosts: all
-  become: yes
-  Roles:
+   become: yes
+   Roles:
     - frontend
      
  
