@@ -1,3 +1,4 @@
+---
 - name: setup todo 
   hosts: all
   become: yes
