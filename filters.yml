@@ -44,7 +44,7 @@
         - name: second server
           disks: 5gb
           ram: 8gb   
-           network: 
+          network: 
               nicol: 8gb
               nicol: 3gb   
       loop_control:
