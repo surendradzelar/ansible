@@ -1,0 +1,49 @@
+ - name: install NGINX
+      apt:
+        name: nginx
+        update_cache: yes
+        state: present
+      become: yes  
+
+    - name: install npm
+      apt:
+        name: npm
+        update_cache: yes
+        state: present
+      become: yes 
+
+    - name: Download frontend from Nexus
+      get_url:
+         url:  http://172.31.15.207:8081/repository/frontend/frontend-{{APP_VERSION}}.zip
+         dest: /tmp/frontend.zip
+         username: admin
+         password: zelar123
+
+    - name: create the HtDocs directory
+      file:
+        path: /var/www/html/todo/frontend
+        state: directory
+
+    - name: changing location
+      command: chdir=/var/www/html ls  
+
+    - name:  create directory 
+      file:
+        path: todo
+        state: directory
+
+    - name: changing directory
+      command: chdir=todo ls 
+
+    - name: unzip the Downloand content
+      unarchive:
+        src: /tmp/frontend.zip
+        dest: /var/www/html
+        remote_src: yes  
+          
+
+    - name: Start Nginx
+      systemd:
+        state: started
+        name: nginx
+        enable: yes  
