@@ -46,4 +46,6 @@
           ram: 8gb   
            network: 
               nicol: 8gb
-              nicol: 3gb          
+              nicol: 3gb   
+      loop_control:
+        label: "{{item.name}}"               
