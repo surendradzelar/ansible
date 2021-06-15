@@ -27,7 +27,7 @@
       command: /var/www/html
       args:
         chdir: /var/www/html/
-        creates: /path/to/html  
+        creates: /path/to/var/www/html  
 
 
 
