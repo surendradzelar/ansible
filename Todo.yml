@@ -51,12 +51,12 @@
     #version: release-0.22
 
 
-     - name: Enable service 
-       systemd:
+    - name: Enable service 
+      systemd:
           name: nginx
           enabled: yes
           state: enable
-          
+
     - name: Start Nginx
       systemd:
         state: started
