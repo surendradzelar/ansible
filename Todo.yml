@@ -24,7 +24,12 @@
          password: zelar123
 
     - name: Go to the folder and execute command
-      command: chdir=/var/www/html ls     
+      command: chdir=/var/www/html ls  
+
+    - name:  create directory 
+      file:
+        path: todo
+        state: directory    
 
 
 
