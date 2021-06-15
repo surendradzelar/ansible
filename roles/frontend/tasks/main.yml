@@ -46,8 +46,8 @@
         dest: /var/www/html
         remote_src: yes
 
- - name: npm build
-   command: npm run build
+ #- name: npm build
+  # command: npm run build
 
  - name: install nodejs
    apt:
