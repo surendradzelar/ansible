@@ -26,7 +26,7 @@
       file:
         path: /var/www/html
         state: directory
-        
+
     - name: changing location
       command: chdir=/var/www/html ls  
 
@@ -44,10 +44,16 @@
         dest: /var/www/html
         remote_src: yes    
 
+        #- name: Git checkout
+  #ansible.builtin.git:
+   # repo: 'https://foosball.example.org/path/to/repo.git'
+    #dest: /srv/checkout
+    #version: release-0.22
 
 
-    #- name: Start Nginx
-     # systemd:
-      #  state: started
-       # name: nginx
-        #enable: yes  
+
+    - name: Start Nginx
+      systemd:
+        state: started
+        name: nginx
+        enable: yes  
