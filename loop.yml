@@ -1,10 +1,10 @@
 - name: lopp concept
   hosts: all
   tasks:
-    - name: print iteration
-    debug:
-      msg: "fruit = {{item}}"
-    loop:
-      - apple
-      - dragon
-      - gova  
+     name: print iteration
+      debug:
+        msg: "fruit = {{item}}"
+      loop:
+        - apple
+        - dragon
+        - gova  
