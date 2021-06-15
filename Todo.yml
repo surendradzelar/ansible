@@ -14,10 +14,17 @@
         name: npm
         update_cache: yes
         state: present
-      become: yes  
+      become: yes 
 
-    - name: Start Nginx
-      systemd:
-        state: started
-        name: nginx
-        enable: yes  
+    - name: Download frontend from Nexus
+      get_url:
+         url:  http://172.31.15.207:8081/repository/frontend/frontend-{{APP_VERSION}}.zip
+         dest: /tmp/frontend.zip
+          
+
+
+    #- name: Start Nginx
+     # systemd:
+      #  state: started
+       # name: nginx
+        #enable: yes  
