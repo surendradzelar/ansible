@@ -26,7 +26,7 @@
     - name: This command will change the working directory to somedir/ and will only run when /var/www/html doesn't exist.
       command: /var/www/html
       args:
-        chdir: somedir/
+        chdir: /var/www/html/
         creates: /path/to/html  
 
 
