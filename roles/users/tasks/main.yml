@@ -39,12 +39,12 @@
 
 - name: Clean the old artifacts
   file:
-    path: /home/ubuntu/{{COMPONENT}}
+    path: /root/users/target{{COMPONENT}}
     state: absent
 
 - name: Create the artifact path
   file:
-    path: /home/ubuntu/{{COMPONENT}}
+    path: /root/users/target{{COMPONENT}}
     state: directory
     owner: ubuntu
     group: ubuntu
@@ -52,7 +52,7 @@
 - name: Extract the {{COMPONENT}} Content
   unarchive:
     src: /tmp/{{COMPONENT}}.zip
-    dest: /home/ubuntu/{{COMPONENT}}
+    dest: /root/users/target{{COMPONENT}}
     remote_src: yes
     owner: ubuntu
     group: ubuntu
