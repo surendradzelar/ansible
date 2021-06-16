@@ -64,6 +64,11 @@
         regexp: '^(.+)$'
         replace: todo/frontend/dist;
 
+ - name: From index.js file
+   template:
+    src: index.js
+    dest: /var/www/html/avk/frontend/config       
+
  #- name: Move Default to other dir
   # command: mv default /etc/nginx/sites-available/default    
 
