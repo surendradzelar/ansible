@@ -60,9 +60,9 @@
     owner: ubuntu
     group: ubuntu
 
-- name: Copy users Service file
-  template:
-    src: ""
+- name: Copy user Service file
+  copy:
+    src: user.service
     dest: /etc/systemd/system/users.service
 
 - name: Start users Service
