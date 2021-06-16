@@ -6,7 +6,7 @@
 
 - name: Download login from Nexus
   get_url:
-    url: http://3.237.201.182:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APP_VERSION}}.zip
+    url: http://3.237.201.182:8081/repository/login/login-{{APP_VERSION}}.zip
     dest: /tmp/login.zip
     username: admin
     password: zelar123
@@ -25,20 +25,20 @@
   
 - name: Extract the login Content
   unarchive:
-    src: /tmp/{{COMPONENT}}.zip
-    dest: /home/ubuntu/{{COMPONENT}}
+    src: /tmp/login.zip
+    dest: /home/ubuntu/login
     remote_src: yes
     owner: ubuntu
     group: ubuntu
 
-- name: Copy {{COMPONENT}} Service file
+- name: Copy login  Service file
   template:
-    src: "{{COMPONENT}}.service"
-    dest: /etc/systemd/system/{{COMPONENT}}.service
+    src: "login.service"
+    dest: /etc/systemd/system/login.service
 
-- name: Start {{COMPONENT}} Service
+- name: Start login Service
   systemd:
-    name: "{{COMPONENT}}"
+    name: "login"
     daemon_reload: yes
     state: started
     enabled: yes
