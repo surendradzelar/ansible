@@ -9,4 +9,4 @@
       - name: print window
         debug:
         msg: "i am window"     
-  when os == "window"
+  #when os == "window"
