@@ -1,41 +1,15 @@
-- name: Install maven
+- name: Install NPM
   apt:
-    name: maven
+    name: npm
     state: present
     update_cache: yes
 
-- name:  create directory 
-  file:
-      path: todo
-      state: directory
-- name:  create directory 
-  file:
-      path: /home/todo
-      state: directory
-
-- name: changing directory
-  command: chdir=/home/todo  ls
-
 - name: Download {{COMPONENT}} from Nexus
   get_url:
-      url:  http://3.237.201.182:8081/repository/{{COMPONENT}}/{{COMPONENT}}-0.0.1.zip
-      dest: /tmp/{{COMPONENT}}.zip
-      username: admin
-      password: zelar123
-
-- name: unzip the Downloand content
-  unarchive:
-        src: /tmp/{{COMPONENT}}.zip
-        dest: /home/todo
-        remote_src: yes   
-
-#- name: moving from users-main to users
- # unarchive:
-  #      src: users-main
-   #     dest: users
-    #    remote_src: yes  
-
-
+    url: http://172.31.13.168:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APP_VERSION}}.zip
+    dest: /tmp/{{COMPONENT}}.zip
+    username: admin
+    password: admin
 
 - name: Clean the old artifacts
   file:
