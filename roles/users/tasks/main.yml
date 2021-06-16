@@ -8,10 +8,6 @@
   file:
       path: todoapp
       state: directory
-- name:  create directory 
-  file:
-      path: todoapp
-      state: directory
 
 - name: changing directory
   command: chdir=/todoapp  ls
