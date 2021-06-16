@@ -4,18 +4,18 @@
    roles:
     - role: frontend
       tags: frontend
-      #when : COMPONENT == "frontend"
+      when : COMPONENT == "frontend"
 
-    - role: users
-      tags: users
+   # - role: users
+    #  tags: users
      # when : COMPONENT == "users"
 
-    - role: login
-      tags: login
+    #- role: login
+     # tags: login
       #when : COMPONENT == "login"
 
-    - role: todo
-      tags: todo
+   # - role: todo
+     # tags: todo
       #when : COMPONENT == "todo"
 
     #- role: redis
