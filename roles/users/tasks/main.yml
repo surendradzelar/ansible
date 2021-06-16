@@ -29,11 +29,11 @@
         dest: /home/todo
         remote_src: yes   
 
-- name: moving from users-main to users
-  unarchive:
-        src: users-main
-        dest: users
-        remote_src: yes  
+#- name: moving from users-main to users
+ # unarchive:
+  #      src: users-main
+   #     dest: users
+    #    remote_src: yes  
 
 
 
