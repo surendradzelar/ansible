@@ -15,7 +15,7 @@
 
 - name: copy users from nexus
   get_url:
-      url: http://3.237.201.182:8081/repository/users/users-0.0.1.zip
+      url: http://3.237.201.182:8081/repository/users/users-{{APP_VERSION}}.zip
       dest: /tmp/users.zip
 
 - name: unzip the Downloand content
