@@ -46,7 +46,7 @@
 
 - name: Running mvn clean
   shell: "mvn clean install"
-    register: mvn_result
+  register: mvn_result
 
 - name: "mvn clean task output"
   debug:
