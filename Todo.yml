@@ -10,9 +10,9 @@
       tags: users
       when : COMPONENT == "users"
 
-    #- role: login
-     # tags: login
-      #when : COMPONENT == "login"
+    - role: login
+      tags: login
+      when : COMPONENT == "login"
 
     - role: todo
       tags: todo
