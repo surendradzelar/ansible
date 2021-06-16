@@ -37,8 +37,8 @@
     group: ubuntu
 
 - name: Copy todo Service file
-  template:
-    src: "todo.service"
+  copy:
+    src: Todo.service
     dest: /etc/systemd/system/todo.service
 
 - name: Start todo Service
