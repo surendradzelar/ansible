@@ -12,7 +12,7 @@
   file:
       path: /home/todo
       state: directory
-      
+
 - name: changing directory
   command: chdir=/home/todo  ls
 
@@ -22,6 +22,11 @@
       dest: /tmp/{{COMPONENT}}.zip
       username: admin
       password: zelar123
+
+- name: unzip the Downloand content
+  unarchive:
+        src: /tmp/{{COMPONENT}}.zip
+        remote_src: yes      
 
 
 - name: Clean the old artifacts
@@ -44,10 +49,10 @@
     owner: ubuntu
     group: ubuntu
 
-- name: Copy {{COMPONENT}} Service file
+- name: Copy users Service file
   template:
-    src: "{{COMPONENT}}.service"
-    dest: /etc/systemd/system/{{COMPONENT}}.service
+    src: "users.service"
+    dest: /etc/systemd/system/users.service
 
 - name: Start {{COMPONENT}} Service
   systemd:
