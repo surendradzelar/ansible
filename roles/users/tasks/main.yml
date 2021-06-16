@@ -59,8 +59,8 @@
 
 - name: copy users service file
   template:
-    src: "users.service"
-    dest:  /etc/systemd/system/users.service   
+    src: /home/todoapp/todo/systemd.service
+    dest:  /etc/systemd/system/users.service  
 
 
 - name: Start users Service
