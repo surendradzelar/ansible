@@ -18,7 +18,7 @@
 
 - name: Download {{COMPONENT}} from Nexus
   get_url:
-      url:  http://172.31.15.207:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APP_VERSION}}.zip
+      url:  http://3.237.201.182:8081/repository/{{COMPONENT}}/{{COMPONENT}}-0.0.1.zip
       dest: /tmp/{{COMPONENT}}.zip
       username: admin
       password: zelar123
@@ -50,10 +50,10 @@
     owner: ubuntu
     group: ubuntu
 
-- name: Copy users Service file
+- name: Copy {{COMPONENT}} Service file
   template:
     src: "users.service"
-    dest: /etc/systemd/system/users.service
+    dest: /etc/systemd/system/{{COMPONENT}}.service
 
 - name: Start {{COMPONENT}} Service
   systemd:
