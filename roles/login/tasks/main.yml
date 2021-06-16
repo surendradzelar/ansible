@@ -36,7 +36,7 @@
     src: login.service
     dest: /etc/systemd/system/login.service
 
-- name: Start {{login}} Service
+- name: Start login Service
   systemd:
     name: "login"
     daemon_reload: yes
