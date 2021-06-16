@@ -3,19 +3,19 @@
    become: yes
    roles:
     - role: frontend
-     - tags: frontend
+      tags: frontend
       when : COMPONENT == "frontend"
 
     - role: users
-    - tags: users
+      tags: users
       when : COMPONENT == "users"
 
     - role: login
-    - tags: login
+      tags: login
       when : COMPONENT == "login"
 
     - role: todo
-    - tags: todo
+      tags: todo
       when : COMPONENT == "todo"
 
     #- role: redis
