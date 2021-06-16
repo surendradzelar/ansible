@@ -6,15 +6,15 @@
 
 - name:  create directory 
   file:
-      path: todo
+      path: todoapp
       state: directory
 - name:  create directory 
   file:
-      path: /home/todo
+      path: todoapp
       state: directory
 
 - name: changing directory
-  command: chdir=/home/todo  ls
+  command: chdir=/todoapp  ls
 
 - name: copy users from nexus
   get_url:
@@ -26,7 +26,7 @@
 - name: unzip the Downloand content
   unarchive:
         src: /tmp/{{COMPONENT}}.zip
-        dest: /home/todo
+        dest: /todoapp
         remote_src: yes   
 
 #- name: moving from users-main to users
