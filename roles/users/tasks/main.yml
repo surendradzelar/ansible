@@ -10,7 +10,7 @@
       state: directory
 
 - name: changing directory
-  command: chdir=/home/todo  
+  command: chdir=/home/todo  ls
 
 - name: Download {{COMPONENT}} from Nexus
   get_url:
