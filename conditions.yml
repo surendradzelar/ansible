@@ -3,10 +3,10 @@
     tasks:
       - name: print ubuntu
         debug:
-        msg: "i am ubuntu"
-  #when os == "ubuntu"
+          msg: "i am ubuntu"
+        when: os == "ubuntu"
 
       - name: print window
         debug:
-        msg: "i am window"     
-  #when os == "window"
+           msg: "i am window"     
+        when: os == "window"
