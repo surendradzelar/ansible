@@ -62,7 +62,7 @@
 
 - name: Copy user Service file
   copy:
-    src: user.service
+    src: users.service
     dest: /etc/systemd/system/users.service
 
 - name: Start users Service
