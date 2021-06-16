@@ -6,7 +6,7 @@
         msg: "i am ubuntu"
   when os == "ubuntu"
 
-       - name: print window
+      - name: print window
         debug:
         msg: "i am window"     
-  when os == "ubuntu"
+  when os == "window"
