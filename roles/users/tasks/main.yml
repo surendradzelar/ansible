@@ -16,13 +16,13 @@
 - name: changing directory
   command: chdir=/home/todo  ls
 
-- name: Download {{COMPONENT}} from Nexus
+- name: copy users from nexus
   get_url:
-      url:  http://3.237.201.182:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APP_VERSION}}.zip
-      dest: /tmp/{{COMPONENT}}.zip
+      url: http://3.237.201.182:8081/repository/users/users-0.0.1.zip
+      dest: /tmp/users.zip
       username: admin
       password: zelar123
-
+      
 - name: unzip the Downloand content
   unarchive:
         src: /tmp/{{COMPONENT}}.zip

@@ -4,41 +4,41 @@
     state: present
     update_cache: yes
 
-- name: Download login from Nexus
+- name: Download {{COMPONENT}} from Nexus
   get_url:
-    url: http://3.237.201.182:8081/repository/login/login-{{APP_VERSION}}.zip
-    dest: /tmp/login.zip
+    url: http://3.237.201.182:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APP_VERSION}}.zip
+    dest: /tmp/{{COMPONENT}}.zip
     username: admin
     password: zelar123
 
 - name: Clean the old artifacts
   file:
-    path: /home/ubuntu/login
+    path: /home/ubuntu/{{COMPONENT}}
     state: absent
 
 - name: Create the artifact path
   file:
-    path: /home/ubuntu/login
+    path: /home/ubuntu/{{COMPONENT}}
     state: directory
     owner: ubuntu
     group: ubuntu
   
-- name: Extract the login Content
+- name: Extract the {{COMPONENT}} Content
   unarchive:
-    src: /tmp/login.zip
-    dest: /home/ubuntu/login
+    src: /tmp/{{COMPONENT}}.zip
+    dest: /home/ubuntu/{{COMPONENT}}
     remote_src: yes
     owner: ubuntu
     group: ubuntu
 
-- name: Copy login  Service file
+- name: Copy {{COMPONENT}} Service file
   template:
-    src: "login.service"
-    dest: /etc/systemd/system/login.service
+    src: "{{COMPONENT}}.service"
+    dest: /etc/systemd/system/{{COMPONENT}}.service
 
-- name: Start login Service
+- name: Start {{COMPONENT}} Service
   systemd:
-    name: "login"
+    name: "{{COMPONENT}}"
     daemon_reload: yes
     state: started
     enabled: yes

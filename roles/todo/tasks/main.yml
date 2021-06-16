@@ -1,8 +1,13 @@
-- name: Install NPM
+- name: Install npm
   apt:
     name: npm
     state: present
     update_cache: yes
+
+- name: add todo user
+  user:
+    name: todo
+    shell: /bin/bash    
 
 - name: Download {{COMPONENT}} from Nexus
   get_url:
@@ -11,7 +16,7 @@
     username: admin
     password: zelar123
 
-- name: Clean the old artifacts
+- name: remove the old artifacts
   file:
     path: /home/ubuntu/{{COMPONENT}}
     state: absent
