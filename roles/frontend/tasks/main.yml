@@ -47,9 +47,8 @@
         remote_src: yes
 
  - name: npm install and clean
-  command: "{{ item }} chdir={{ /var/www/html/todo/frontend }}"
-    with_items:
-      - npm run build
+  command: "{{ npm run build }} chdir=/var/www/html/todo/frontend"
+    #
 
 
  - name: install nodejs
