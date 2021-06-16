@@ -4,7 +4,7 @@
    roles:
     - role: frontend
       tags: frontend
-      when : COMPONENT == "frontend"
+      #when : COMPONENT == "frontend"
 
    # - role: users
     #  tags: users
