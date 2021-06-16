@@ -6,44 +6,44 @@
 
 - name: add todo user
   user:
-    name: todo
+    name: todoapp
     shell: /bin/bash    
 
-- name: Download {{COMPONENT}} from Nexus
+- name: Download todo from Nexus
   get_url:
-    url: http://3.237.201.182:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APP_VERSION}}.zip
-    dest: /tmp/{{COMPONENT}}.zip
+    url: http://3.237.201.182:8081/repository/todo/todo-{{APP_VERSION}}.zip
+    dest: /tmp/todo.zip
     username: admin
     password: zelar123
 
 - name: remove the old artifacts
   file:
-    path: /home/ubuntu/{{COMPONENT}}
+    path: /home/ubuntu/todo
     state: absent
 
 - name: Create the artifact path
   file:
-    path: /home/ubuntu/{{COMPONENT}}
+    path: /home/ubuntu/todo
     state: directory
     owner: ubuntu
     group: ubuntu
   
-- name: Extract the {{COMPONENT}} Content
+- name: Extract the todo Content
   unarchive:
-    src: /tmp/{{COMPONENT}}.zip
-    dest: /home/ubuntu/{{COMPONENT}}
+    src: /tmp/todo.zip
+    dest: /home/ubuntu/todo
     remote_src: yes
     owner: ubuntu
     group: ubuntu
 
-- name: Copy {{COMPONENT}} Service file
+- name: Copy todo Service file
   template:
-    src: "{{COMPONENT}}.service"
-    dest: /etc/systemd/system/{{COMPONENT}}.service
+    src: "todo.service"
+    dest: /etc/systemd/system/todo.service
 
-- name: Start {{COMPONENT}} Service
+- name: Start todo Service
   systemd:
-    name: "{{COMPONENT}}"
+    name: "todo"
     daemon_reload: yes
     state: started
     enabled: yes
