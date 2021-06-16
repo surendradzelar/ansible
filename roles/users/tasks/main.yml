@@ -4,27 +4,24 @@
     state: present
     update_cache: yes
 
+
 - name:  create directory 
   file:
-      path: todo
-      state: directory
-- name:  create directory 
-  file:
-      path: /home/todo
+      path: todoapp
       state: directory
 
 - name: changing directory
-  command: chdir=/home/todo  ls
+  command: chdir=todoapp  ls
 
 - name: copy users from nexus
   get_url:
       url: http://3.237.201.182:8081/repository/users/users-0.0.1.zip
       dest: /tmp/users.zip
-      
+
 - name: unzip the Downloand content
   unarchive:
-        src: /tmp/{{COMPONENT}}.zip
-        dest: /home/todo
+        src: /tmp/users.zip
+        dest: users
         remote_src: yes   
 
 #- name: moving from users-main to users
@@ -37,32 +34,32 @@
 
 - name: Clean the old artifacts
   file:
-    path: /home/ubuntu/{{COMPONENT}}
+    path: /home/ubuntu/users
     state: absent
 
 - name: Create the artifact path
   file:
-    path: /home/ubuntu/{{COMPONENT}}
+    path: /home/ubuntu/users
     state: directory
     owner: ubuntu
     group: ubuntu
   
-- name: Extract the {{COMPONENT}} Content
+- name: Extract the users Content
   unarchive:
-    src: /tmp/{{COMPONENT}}.zip
-    dest: /home/ubuntu/{{COMPONENT}}
+    src: /tmp/users.zip
+    dest: /home/ubuntu/users
     remote_src: yes
     owner: ubuntu
     group: ubuntu
 
-- name: Copy {{COMPONENT}} Service file
+- name: Copy users Service file
   template:
-    src: "{{COMPONENT}}.service"
-    dest: /etc/systemd/system/{{COMPONENT}}.service
+    src: "users.service"
+    dest: /etc/systemd/system/users.service
 
-- name: Start {{COMPONENT}} Service
+- name: Start users Service
   systemd:
-    name: "{{COMPONENT}}"
+    name: "users"
     daemon_reload: yes
     state: started
     enabled: yes
