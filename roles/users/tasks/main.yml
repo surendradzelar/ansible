@@ -26,6 +26,7 @@
 - name: unzip the Downloand content
   unarchive:
         src: /tmp/{{COMPONENT}}.zip
+        dest: /home/todo
         remote_src: yes      
 
 
