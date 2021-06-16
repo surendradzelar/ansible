@@ -1,12 +1,12 @@
- - name: this conditions
-  hosts: all
-  tasks:
-    - name: print ubuntu
-      debug:
+  - name: this conditions
+    hosts: all
+    tasks:
+      - name: print ubuntu
+        debug:
         msg: "i am ubuntu"
   when os == "ubuntu"
 
-    - name: print window
-      debug:
+      - name: print window
+        debug:
         msg: "i am window"     
   when os == "ubuntu"
