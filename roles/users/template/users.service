@@ -1,0 +1,11 @@
+[Unit]
+Description=users service
+
+[Service]
+
+Environment=SERVER_PORT=8080
+ExecStart=/bin/java -jar /root/users/target/users.jar
+SyslogIdentifier=users
+
+[Install]
+WantedBy=multi-user.target
