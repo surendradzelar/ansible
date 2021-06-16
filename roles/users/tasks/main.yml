@@ -8,7 +8,11 @@
   file:
       path: todo
       state: directory
-
+- name:  create directory 
+  file:
+      path: /home/todo
+      state: directory
+      
 - name: changing directory
   command: chdir=/home/todo  ls
 
