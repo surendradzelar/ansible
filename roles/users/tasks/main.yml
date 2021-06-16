@@ -45,7 +45,7 @@
     group: ubuntu
 
 - name: Running mvn clean
-  shell: "mvn clean install"
+  shell: " mvn clean package  "
   register: mvn_result
 
 - name: "mvn clean task output"
