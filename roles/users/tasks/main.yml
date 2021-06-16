@@ -43,6 +43,14 @@
     state: directory
     owner: ubuntu
     group: ubuntu
+
+ - name: Running mvn clean
+    shell: "mvn clean install"
+    register: mvn_result
+
+  - name: "mvn clean task output"
+    debug:
+     var: mvn_result    
   
 - name: Extract the users Content
   unarchive:
@@ -54,7 +62,7 @@
 
 - name: Copy users Service file
   template:
-    src: "users.service"
+    src: ""
     dest: /etc/systemd/system/users.service
 
 - name: Start users Service
