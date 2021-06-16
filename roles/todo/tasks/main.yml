@@ -6,10 +6,10 @@
 
 - name: Download {{COMPONENT}} from Nexus
   get_url:
-    url: http://172.31.13.168:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APP_VERSION}}.zip
+    url: http://3.237.201.182:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APP_VERSION}}.zip
     dest: /tmp/{{COMPONENT}}.zip
     username: admin
-    password: admin
+    password: zelar123
 
 - name: Clean the old artifacts
   file:
