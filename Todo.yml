@@ -14,9 +14,9 @@
      # tags: login
       #when : COMPONENT == "login"
 
-   # - role: todo
-     # tags: todo
-      #when : COMPONENT == "todo"
+    - role: todo
+      tags: todo
+      when : COMPONENT == "todo"
 
     #- role: redis
     #- tags: redis
