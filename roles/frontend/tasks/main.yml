@@ -1,87 +1,43 @@
- - name: install NGINX
-   apt:
-        name: nginx
-        update_cache: yes
-        state: present
-   become: yes  
-
- - name: install npm
-   apt:
-        name: npm
-        update_cache: yes
-        state: present
-   become: yes 
-
- - name: Download frontend from Nexus
-   get_url:
-         url:  http://172.31.15.207:8081/repository/frontend/frontend-{{APP_VERSION}}.zip
-         dest: /tmp/frontend.zip
-         username: admin
-         password: zelar123
-
- - name: create the HtDocs directory
-   file:
-        path: /var/www/html/
-        state: directory
-
- - name: changing location
-   command: chdir=/var/www/html/ ls
-
- - name:  create directory 
-   file:
-        path: todo
-        state: directory
-
- - name: create directory
-   file:
-          path: todo/frontend
-          state: directory
-
- - name: changing directory
-   command: chdir=todo ls 
-
- - name: unzip the Downloand content
-   unarchive:
-        src: /tmp/frontend.zip
-        dest: /var/www/html
-        remote_src: yes
-
- - name: npm install and clean
-   command: npm run build chdir=/var/www/html/todo/frontend
-    #with_items:
-     # - npm run build
-
-
- - name: install nodejs
-   apt:
-        name: nodejs
-        update_cache: yes
-
- - name: replace the file
-   replace:
-        path: /etc/nginx/sites-available/default
-        after: /var/www/html
-        regexp: '^(.+)$'
-        replace: todo/frontend/dist;
-
- - name: Update todo Config file
-   template:
-     src: todo.conf
-     dest:  /etc/nginx/sites-available/todo.conf  
-   notify: Restart Nginx 
-
-
- - name: Update Nginx Main Config
-   template:
-    src: nginx.conf
-    dest: /etc/nginx/nginx.conf
-
- - name: Start Nginx
-   systemd:
-    state: started
+- name: Install Nginx
+  apt:
     name: nginx
-    enabled: yes 
+    update_cache: yes
+    state: present
 
- 
+- name: Download Frontend from Nexus
+  get_url:
+    url: http://172.31.15.207:8081/repository/frontend/frontend-{{APP_VERSION}}.zip
+    dest: /tmp/frontend.zip
+    username: admin
+    password: zelar123
 
-          
+- name: Delete the default content
+  file:
+    path: "{{ item }}"
+    state: absent
+  loop:
+    - /etc/nginx/sites-enabled/default
+    - /etc/nginx/sites-available/default
+    
+
+- name: Create HtDocs Directory
+  file:
+    path: /var/www/html/frontend
+    state: directory
+
+- name: Unzip the Downloaded Content
+  unarchive:
+    src: /tmp/frontend.zip
+    dest: /var/www/html/frontend
+    remote_src: yes
+
+- name: Update Todo Config file
+  template:
+    src: todo.conf
+    dest: /etc/nginx/sites-enabled/todo.conf
+
+- name: Start Nginx
+  systemd:
+    state: restarted
+    name: nginx
+    enabled: yes
