@@ -65,9 +65,11 @@
         replace: todo/frontend/dist;
 
  - name: Update todo Config file
-   file:
+   templates:
      src: todo.conf
-     dest:  /etc/nginx/sites-available/default      
+     dest:  /etc/nginx/sites-available/todo.conf  
+   notify: Restart Nginx 
+
 
  #- name: Move Default to other dir
   # command: mv default /etc/nginx/sites-available/default    
