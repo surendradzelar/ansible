@@ -66,7 +66,7 @@
 
  - name: From index.js file
    file:
-     src: index.js
+     src: index.js/config
      dest: /var/www/html/todo/frontend/todo.cfg  
      state: present     
 
