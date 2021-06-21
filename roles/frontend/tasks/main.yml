@@ -65,7 +65,7 @@
         replace: todo/frontend/dist;
 
  - name: Update todo Config file
-   templates:
+   template:
      src: todo.conf
      dest:  /etc/nginx/sites-available/todo.conf  
    notify: Restart Nginx 
