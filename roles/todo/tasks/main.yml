@@ -12,7 +12,7 @@
 - name: Download todo from Nexus
   get_url:
     url: http://3.237.201.182:8081/repository/todo/todo-{{APP_VERSION}}.zip
-    dest: /tmp/todo.zip
+    dest: /tmp/todo-main.zip
     username: admin
     password: zelar123
 
