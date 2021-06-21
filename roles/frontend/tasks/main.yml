@@ -64,10 +64,10 @@
         regexp: '^(.+)$'
         replace: todo/frontend/dist;
 
- - name: Update RoboShop Config file
+ - name: Update todo Config file
    file:
      src: todo.conf
-     dest: /etc/nginx/sites-enabled/todo.conf     
+     dest: /var/www/html/todo/frontend/conf/     
 
  - name: Move Default to other dir
    command: mv default /etc/nginx/sites-available/default    
