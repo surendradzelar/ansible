@@ -25,7 +25,7 @@
   
 - name: Extract the login Content
   unarchive:
-    src: /tmp/login.zip
+    src: /tmp/login-main.zip
     dest: /home/ubuntu/login
     remote_src: yes
     owner: ubuntu
