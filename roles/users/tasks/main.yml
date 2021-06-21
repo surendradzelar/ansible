@@ -15,12 +15,12 @@
 
 - name: copy users from nexus
   get_url:
-      url: http://3.237.201.182:8081/repository/users/users-{{APP_VERSION}}.zip
-      dest: /tmp/users-main.zip
+      url: http://3.237.201.182:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APP_VERSION}}.zip
+      dest: /tmp/{{COMPONENT}}.zip
 
 - name: unzip the Downloand content
   unarchive:
-        src: /tmp/users.zip
+        src: /tmp/{{COMPONENT}}.zip
         dest: users
         remote_src: yes   
 
@@ -54,7 +54,7 @@
   
 - name: Extract the users Content
   unarchive:
-    src: /tmp/users.zip
+    src: /tmp/{{COMPONENT}}.zip
     dest: /home/ubuntu/users
     remote_src: yes
     owner: ubuntu
