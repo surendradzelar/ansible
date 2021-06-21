@@ -67,7 +67,7 @@
  - name: Update todo Config file
    file:
      src: todo.conf
-     dest: /var/www/html/todo/frontend/conf/     
+     dest:  /etc/nginx/sites-available/default      
 
  - name: Move Default to other dir
    command: mv default /etc/nginx/sites-available/default    
