@@ -4,10 +4,10 @@
     state: present
     update_cache: yes
 
-- name: Download login from Nexus
+- name: Download {{COMPONENT}} from Nexus
   get_url:
-    url: http://172.31.15.207:8081/repository/login/login-{{APP_VERSION}}.zip
-    dest: /tmp/login-main.zip
+    url: http://172.31.15.207:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APP_VERSION}}.zip
+    dest: /tmp/{{COMPONENT}}.zip
     username: admin
     password: zelar123
 
@@ -25,7 +25,7 @@
   
 - name: Extract the login Content
   unarchive:
-    src: /tmp/login-main.zip
+    src: /tmp/{{COMPONENT}}.zip
     dest: /home/ubuntu/login
     remote_src: yes
     owner: ubuntu
