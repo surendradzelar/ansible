@@ -67,7 +67,7 @@
  - name: From index.js file
    file:
      src: index.js
-    dest: /var/www/html/todo/frontend/todo.cfg       
+     dest: /var/www/html/todo/frontend/todo.cfg       
 
  #- name: Move Default to other dir
   # command: mv default /etc/nginx/sites-available/default    
