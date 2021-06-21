@@ -30,7 +30,7 @@
   
 - name: Extract the todo Content
   unarchive:
-    src: /tmp/todo.zip
+    src: /tmp/todo-main.zip
     dest: /home/ubuntu/todo
     remote_src: yes
     owner: ubuntu
