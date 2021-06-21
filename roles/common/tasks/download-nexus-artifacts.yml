@@ -3,7 +3,7 @@
     url: http://172.31.15.207:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APP_VERSION}}.zip
     dest: /tmp/{{COMPONENT}}.zip
     username: admin
-    password: admin
+    password: zelar123
 
 - name: Clean the old artifacts
   file:
