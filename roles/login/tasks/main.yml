@@ -1,44 +1,4 @@
-- name: Install GOLANG
-  apt:
-    name: golang
-    state: present
-    update_cache: yes
-
-- name: Download {{COMPONENT}} from Nexus
-  get_url:
-    url: http://172.31.15.207:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APP_VERSION}}.zip
-    dest: /tmp/{{COMPONENT}}.zip
-    username: admin
-    password: zelar123
-
-- name: Clean the old artifacts
-  file:
-    path: /home/ubuntu/login
-    state: absent
-
-- name: Create the artifact path
-  file:
-    path: /home/ubuntu/login
-    state: directory
-    owner: ubuntu
-    group: ubuntu
-  
-- name: Extract the login Content
-  unarchive:
-    src: /tmp/{{COMPONENT}}.zip
-    dest: /home/ubuntu/login
-    remote_src: yes
-    owner: ubuntu
-    group: ubuntu
-
-- name: Copy login Service file
-  copy:
-    src: "login.service"
-    dest: /etc/systemd/system/login.service
-
-- name: Start login Service
-  systemd:
-    name: "login"
-    daemon_reload: yes
-    state: started
-    enabled: yes
+- name: Import GOLANG Common role
+  include_role:
+    name: common
+    tasks_from: golang
