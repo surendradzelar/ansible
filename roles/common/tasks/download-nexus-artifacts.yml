@@ -1,24 +1,24 @@
-- name: Download {{COMPONENT}} from Nexus
-  get_url:
+ - name: Download {{COMPONENT}} from Nexus
+   get_url:
     url: http://172.31.15.207:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APP_VERSION}}.zip
     dest: /tmp/{{COMPONENT}}.zip
     username: admin
     password: zelar123
 
-- name: Clean the old artifacts
-  file:
+ - name: Clean the old artifacts
+   file:
     path: /home/ubuntu/{{COMPONENT}}
     state: absent
 
-- name: Create the artifact path
-  file:
+ - name: Create the artifact path
+   file:
     path: /home/ubuntu/{{COMPONENT}}
     state: directory
     owner: ubuntu
     group: ubuntu
   
-- name: Extract the {{COMPONENT}} Content
-  unarchive:
+ - name: Extract the {{COMPONENT}} Content
+   unarchive:
     src: /tmp/{{COMPONENT}}.zip
     dest: /home/ubuntu/{{COMPONENT}}
     remote_src: yes
