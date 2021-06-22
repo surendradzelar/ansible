@@ -4,7 +4,7 @@ Description=todo service
 User=todo
 Type=simple
 Environment=REDIS_API_ADDRESS=http://redis.zssurendra.online:8080
-ExecStart=/bin/node /root/shell-scripting/TODOAPP/todo/server.js
+ExecStart=/bin/node /home/ubuntu/todo/server.js
 SyslogIdentifier=todo
 Restart=on-failure
 [Install]
