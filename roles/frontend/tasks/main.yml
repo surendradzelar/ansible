@@ -4,10 +4,10 @@
     update_cache: yes
     state: present
 
-- name: Download {{COMPONENT}} from Nexus
+- name: Download Frontend from Nexus
   get_url:
-    url: http://172.31.15.207:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APP_VERSION}}.zip
-    dest: /tmp/{{COMPONENT}}.zip
+    url: http://172.31.15.207:8081/repository/frontend/frontend-{{APP_VERSION}}.zip
+    dest: /tmp/frontend.zip
     username: admin
     password: zelar123
 
@@ -27,7 +27,7 @@
 
 - name: Unzip the Downloaded Content
   unarchive:
-    src: /tmp/{{COMPONENT}}.zip
+    src: /tmp/frontend.zip
     dest: /var/www/html/frontend
     remote_src: yes
 
