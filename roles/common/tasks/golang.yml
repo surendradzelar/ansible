@@ -2,7 +2,7 @@
   apt:
     name: golang
     state: present
-    update_cache: yes
+    update_cache: no
 
 - name: Download Artifacts from Nexus
   include_tasks: download-nexus-artifacts.yml
