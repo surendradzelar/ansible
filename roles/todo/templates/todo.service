@@ -2,7 +2,7 @@
 Description=Todo Service
 
 [Service]
-Environment=REDIS_HOST=redis-{{ENV}}.zssurendra01.online
+Environment=REDIS_HOST=redis.zssurendra01.online
 ExecStart=/bin/node /home/ubuntu/todo/server.js
 SyslogIdentifier =todo
 
