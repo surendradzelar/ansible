@@ -1,3 +1,4 @@
+
 - name: Validate exisiting Installation
   stat:
     path: /opt/node_exporter
@@ -35,3 +36,4 @@
         state: started
         enabled: yes
         daemon_reload: yes
+        
