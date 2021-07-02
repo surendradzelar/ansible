@@ -6,7 +6,7 @@
 
 - name: Download Frontend from Nexus
   get_url:
-    url: http://172.31.21.155:8081/repository/frontend/frontend-{{APP_VERSION}}.zip
+    url: http://172.31.17.105:8081/repository/frontend/frontend-{{APP_VERSION}}.zip
     dest: /tmp/frontend.zip
     username: admin
     password: zelar123
