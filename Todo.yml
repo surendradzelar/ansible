@@ -19,5 +19,5 @@
       when : COMPONENT == "login"
 
     - role: frontend
-    - tags: frontend
-      when : COMPONENT == "frontend"
+      tags: frontend
+       when : COMPONENT == "frontend"
