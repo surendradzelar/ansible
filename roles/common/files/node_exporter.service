@@ -1,12 +1,11 @@
+[Unit]
+Description=node_exporter
+Wants=network-online.target
+After=network-online.target
 
-#[Unit]
-#Description=node_exporter
-#Wants=network-online.target
-#After=network-online.target
-##
-##[Service]
-##Type=simple
-##ExecStart=/opt/node_exporter/node_exporter --collector.systemd
+[Service]
+Type=simple
+ExecStart=/opt/node_exporter/node_exporter --collector.systemd
 
-##[Install]
-##WantedBy=multi-user.target
+[Install]
+WantedBy=multi-user.target
