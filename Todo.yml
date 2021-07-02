@@ -20,4 +20,4 @@
 
     - role: frontend
       tags: frontend
-       when : COMPONENT == "frontend"
+      when : COMPONENT == "frontend"
