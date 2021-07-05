@@ -3,7 +3,7 @@
     "Changes": [{
       "Action": "UPSERT",
       "ResourceRecordSet": {
-        "Name": "COMPONENT.surendrazs.ml",
+        "Name": "COMPONENT.zssurendra.tk",
         "Type": "A",
         "TTL": 300,
         "ResourceRecords": [{ "Value": "IPADDRESS"}]
