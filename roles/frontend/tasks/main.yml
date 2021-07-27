@@ -36,11 +36,11 @@
     src: todo.conf
     dest: /etc/nginx/sites-enabled/todo.conf
 
-- name: Start Nginx
-  systemd:
-    state: restarted
-    name: nginx
-    enabled: yes
+#- name: Start Nginx
+  #systemd:
+    #state: restarted
+    #name: nginx
+    #enabled: yes
 
 - name: Install Node Exporter Prometheus Monitoring
   include_role:
