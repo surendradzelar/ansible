@@ -2,7 +2,7 @@
 Description=user service
 
 [Service]
-Environment=AUTH_API_PORT=100
+Environment=AUTH_API_PORT=80
 ExecStart=/bin/java -jar /home/ubuntu/users/users.jar 
 SyslogIdentifier=user
 [Install]
