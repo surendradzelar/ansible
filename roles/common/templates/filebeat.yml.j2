@@ -1,24 +1,11 @@
 
 filebeat.inputs:
+{% for log_filename in LOG_FILES %}
 - type: log
-  enabled: false
+  enabled: true
   paths:
-    - /var/log/
-
-
-filebeat.config.modules:
-  
-  path: ${path.config}/modules.d/*.yml
-  reload.enabled: false
-
-setup.template.settings:
-  index.number_of_shards: 1
-  
-
-
-
-
-
+    - {{value}}
+    {% endfor %}
 
 
 {% if IS_STRUCTURED %}
@@ -28,6 +15,16 @@ output.elasticsearch:
 output.logstash:
   hosts: ["localhost:5044"]
 {% endif %}
+
+
+############ defaluts##########################
+filebeat.config.modules:
+  
+  path: ${path.config}/modules.d/*.yml
+  reload.enabled: false
+
+setup.template.settings:
+  index.number_of_shards: 1
 
   
 
