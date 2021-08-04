@@ -20,13 +20,13 @@
     state: present
     update_cache: yes
 
-- name: Update Filebeat Configuration
-  template:
-    src: filebeat.yml.j2
-    dest: /etc/filebeat/filebeat.yml
+#- name: Update Filebeat Configuration
+ # template:
+  #  src: filebeat.yml.j2
+   # dest: /etc/filebeat/filebeat.yml
 
-- name: Restart filebeat service
-  systemd:
-    name: filebeat
-    state: restarted
-    enabled: yes
+#- name: Restart filebeat service
+ # systemd:
+  #  name: filebeat
+   # state: restarted
+    #enabled: yes
