@@ -35,7 +35,7 @@
   template:
     src: todo.conf
     dest: /etc/nginx/sites-enabled/todo.conf
-  notify: Restart nginx
+  
 
 - name: Install Node Exporter Prometheus Monitoring
   include_role:
