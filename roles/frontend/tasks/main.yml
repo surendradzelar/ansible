@@ -49,5 +49,5 @@
   vars: 
     IS_STRUCTURED: true
     LOG_FILES:
-      - /var/log/nginx/access.log
-      - /var/log/nginx/error.log
+      - { file: "/var/log/nginx/access.log" , type: "nginx_access" }
+      - { file: "/var/log/nginx/error.log", type: "nginx_error"}
