@@ -3,7 +3,7 @@ Description=Todo Service
 
 [Service]
 Environment=REDIS_HOST=redis-dev.zssurendra.tk
-ExecStart=/bin/node /home/ubuntu/todo/server.js
+ExecStart=/bin/node  --no-warnings  /home/ubuntu/todo/server.js
 SyslogIdentifier =todo
 [Install]
 WantedBy=multi-user.target

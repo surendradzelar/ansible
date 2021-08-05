@@ -3,7 +3,7 @@ Description=user service
 
 [Service]
 Environment=AUTH_API_PORT=80
-ExecStart=/bin/java -jar /home/ubuntu/users/users.jar 
+ExecStart=/bin/java -jar  --no-warnings /home/ubuntu/users/users.jar 
 SyslogIdentifier=users
 [Install]
 WantedBy=multi-user.target
