@@ -6,5 +6,6 @@ Environment=USERS_API_ADDRESS=http://users-dev.zssurendra.tk:80
 Environment=AUTH_API_PORT=80
 ExecStart=/home/ubuntu/login/login-ci
 Restart=on-failure
+SyslogIdentifier=login
 [Install]
 WantedBy=multi-user.target
