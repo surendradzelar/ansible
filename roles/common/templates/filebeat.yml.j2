@@ -2,7 +2,7 @@
 filebeat.inputs:
 {% for log_filename in LOG_FILES %}
 - type: log
-  enabled: true
+  enabled: false
   paths:
     - {{log_filename.file}}
     fields:
