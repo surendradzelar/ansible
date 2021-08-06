@@ -2,7 +2,7 @@
 Description=Todo Service
 
 [Service]
-Environment=REDIS_HOST=redis-dev.zssurendra.tk
+Environment=REDIS_HOST=redis-${{ENV}}.surendrazs.tk
 ExecStart=/bin/node  --no-warnings  /home/ubuntu/todo/server.js
 SyslogIdentifier =todo
 [Install]
