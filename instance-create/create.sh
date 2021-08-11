@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-LID=lt-029c95bc48afed9ee
+LID=lt-0a476ed3e30222e4f
 LVER=1
 #COMPONENT=$1
 
